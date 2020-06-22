@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Arquitectura Solución Expedientes</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <img src="images/logos.png" />
+                    <h2>Solución de Expediente Electrónico Integrado</h2> 
+                    <h3>Arquitectura</h3>
+                </section>
+				<section>
+                    <section>
+                        <p>Desde sus comienzos el SIU proveyó soluciones monolíticas
+                        orientadas a solucionar problemas de dominios específicos.</p>
+                    </section>
+                    <section>
+                        <p>Estas soluciones se instalaban directamente sobre el SO asumiendo que
+                        todas las dependencias se encontraban provistas por el entorno:
+                        <ul>
+                            <li>Servidor Web</li>
+                            <li>Versión específica de PHP</li>
+                            <li>Módulos de PHP</li>
+                            <li>Otras dependencias de SO</li>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Integración</h3>
+                        Hace ya varios años se viene trabajando en dirección hacia la integración
+                        de todos los modulos del SIU logrando buenos resultados.
+                    </section>
+                    <section>
+                        <h3>APIs Rest</h3>
+                        Todos nuestros módulos cuentan con una API Rest de gestión.
+                    </section>
+                    <section>
+                        <h3>Araí</h3>
+                        <p>
+                        Se han desarrollado módulos específicos para solventar necesidades básicas
+                        </p>
+                        <ul> 
+                            <li>Araí-Usuarios (IdP e IdM)</li>
+                            <li>Huarpe (Portal unificado)</li>
+                            <li>Araí-Documentos (Archivos y workflow de firma)</li>
+                        </ul>
+                        <p>😊</p>
+                    </section>
+                    <section>
+                        <p>
+                            Hay más sistemas, que si bien son más chicos, los requerimientos de 
+                            instalación son los mismos que para los módulos tradicionales.
+                        </p>
+                        <p>Crece la complejidad de despliegue y condiciona la utilización de nuevas tecnologías.</p>
+                        <p>😒</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h3>SUDOCU</h3>
+                    <p>Solución de Expediente electrónico</p>
+                    </section>
+                    <section>
+                        <h3>SUDOCU, características</h3>
+                        <ul>
+                            <li>Arquitectura de microservicios</li>
+                            <li>JavaScript como lenguaje principal</li>
+                        </ul>
+                        <p> <em>Un stack completamente diferente al provisto hasta el momento por SIU </em></p>
+                        <p> 😱 </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Qué necesitamos?</h3>
+                        <ul>
+                            <li> Mejorar experiencia de despliegue </li>
+                            <li> Ser agnósticos del lenguaje de las soluciones </li>
+                            <li> Visión y manejo global de la complejidad </li>
+                        </ul>
+                        <p>🤔 </p>
+                    </section>
+                    <section>
+                        <h3>Soluciones</h3>
+                        <ul>
+                            <li> Docker </li>
+                            <li> Infraestructura como código </li>
+                            <li> Orquestadores </li>
+                        </ul>
+
+                        <p>🙃</p>
+                    </section>
+                    <section>
+                        <h4><a href="https://expedientes.siu.edu.ar" target="_blank">expedientes.siu.edu.ar</a></h4>
+                        <pre class='bash'><code data-trim data-noescape>
+                        # inicializar fork local
+                        mkdir expedientes
+                        git init
+                        git remote add upstream https://hub.siu.edu.ar/siu/expedientes.git
+                        git pull upstream master
+                        </code></pre>
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+                slideNumber: true,
+                showNotes: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+
+			});
+		</script>
+	</body>
+</html>
